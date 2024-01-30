@@ -1,25 +1,41 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <title>Color Changer</title>
+    <title>Which Ducky?</title>
     <style>
         body {
-            background-color: white;
+           color:gold;
+           font-family: sans-serif;
+            background-size: cover;
+            display:grid;
+            justify-content: center;
+            align-items: center;
+
+        }
+        #Duckydecide:hover{
+            cursor: pointer;
         }
     </style>
 </head>
 <body>
-    <h1>Click to Change Color</h1>
-
+    <h1 id="Duckydecide">rubber ducky or ducky isopod?</h1> 
     <script>
-        function changeColor() {
-            var colors = ['red', 'blue'];
-            var randomIndex = Math.floor(Math.random() * colors.length);
-            var randomColor = colors[randomIndex];
-            document.body.style.backgroundColor = randomColor;
-        }
-
-        document.addEventListener('click', changeColor);
+        document.getElementById('Duckydecide').addEventListener('click', function() {
+            var random = Math.random();
+            if(random < 0.5){
+                var imagePath = 'duck.png';
+                document.body.style.backgroundImage = 'url(' + imagePath + ')';
+                console.log("rubber ducky");
+                
+            }
+            else{
+                var imagePath = 'isopod.png';
+                document.body.style.backgroundImage = 'url(' + imagePath + ')';
+                console.log("ducky isopod");
+               
+            }
+        });
+          
     </script>
 </body>
 </html>
