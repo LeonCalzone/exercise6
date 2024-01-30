@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Color Changer</title>
+    <style>
+        body {
+            background-color: white;
+        }
+    </style>
+</head>
+<body>
+    <h1>Click to Change Color</h1>
+
+    <script>
+        function changeColor() {
+            var colors = ['red', 'blue'];
+            var randomIndex = Math.floor(Math.random() * colors.length);
+            var randomColor = colors[randomIndex];
+            document.body.style.backgroundColor = randomColor;
+        }
+
+        document.addEventListener('click', changeColor);
+    </script>
+</body>
+</html>
